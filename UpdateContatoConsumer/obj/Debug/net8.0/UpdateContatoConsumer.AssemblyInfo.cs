@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UpdateContatoConsumer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a63a34615a8c1908bc8e98f411d3603ef66e2c59")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c268671810623f9230a26935486fc6b3f865f7f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("UpdateContatoConsumer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UpdateContatoConsumer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

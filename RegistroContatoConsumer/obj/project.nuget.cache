@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RCDX3wDYsi8=",
+  "dgSpecHash": "+JBcsloDlY4=",
   "success": true,
-  "projectFilePath": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\RegistroContatoConsumer.csproj",
+  "projectFilePath": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\AddContatoConsumer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\solan\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\solan\\.nuget\\packages\\dapper.contrib\\2.0.78\\dapper.contrib.2.0.78.nupkg.sha512",

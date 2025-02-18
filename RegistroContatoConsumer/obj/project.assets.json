@@ -2185,9 +2185,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\RegistroContatoConsumer.csproj",
-      "projectName": "RegistroContatoConsumer",
-      "projectPath": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\RegistroContatoConsumer.csproj",
+      "projectUniqueName": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\AddContatoConsumer.csproj",
+      "projectName": "AddContatoConsumer",
+      "projectPath": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\AddContatoConsumer.csproj",
       "packagesPath": "C:\\Users\\solan\\.nuget\\packages\\",
       "outputPath": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\obj\\",
       "projectStyle": "PackageReference",

@@ -47,35 +47,39 @@ COPY prometheus.yml /etc/prometheus/prometheus.yml
 global:
   scrape_interval: 5s
 
+global:
+  scrape_interval: 5s
+
 scrape_configs:
-  - job_name: "addcontatoproducer"
+  - job_name: "addcontatoconsumer"
     scrape_interval: 5s
     static_configs:
-      - targets: ["host.docker.internal:7070"]
+      - targets: ["host.docker.internal:7071"]
+
+  - job_name: "Addcontatoconsumer"
+    scrape_interval: 5s
+    static_configs:
+      - targets: ["host.docker.internal:7072"]
 
   - job_name: "deletecontato"
     scrape_interval: 5s
     static_configs:
-      - targets: ["host.docker.internal:7070"]
+      - targets: ["host.docker.internal:7073"]
 
   - job_name: "getcontato"
     scrape_interval: 5s
     static_configs:
-      - targets: ["host.docker.internal:7070"]
+      - targets: ["host.docker.internal:7074"]
 
-  - job_name: "updatecontatoproducer"
+  - job_name: "updatecontatoconsumer"
     scrape_interval: 5s
     static_configs:
-      - targets: ["host.docker.internal:7070"]
+      - targets: ["host.docker.internal:7075"]
 
-  - job_name: "addcontatoconsumer"
+  - job_name: "updatecontatoconsumer"
     scrape_interval: 5s
     static_configs:
-      - targets: ["host.docker.internal:7070"]
-- job_name: "updatecontatoconsumer"
-    scrape_interval: 5s
-    static_configs:
-      - targets: ["host.docker.internal:7070"]
+      - targets: ["host.docker.internal:7076"]
 
   - job_name: "node_exporter"
     static_configs:
