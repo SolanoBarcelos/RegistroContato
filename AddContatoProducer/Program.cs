@@ -72,7 +72,7 @@ void ConfigureApp(WebApplication app)
     // Configuração da URL em ambiente de produção (para Docker, por exemplo)
     if (app.Environment.IsProduction())
     {
-        app.Urls.Add("http://0.0.0.0:7071");
+        app.Urls.Add("http://0.0.0.0:7072");
     }
 
     // Adiciona o endpoint /metrics (Prometheus)

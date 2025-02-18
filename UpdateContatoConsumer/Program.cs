@@ -53,7 +53,7 @@ app.UseHttpMetrics(); // Métricas HTTP automáticas
 // Configuração para o ambiente de produção
 if (app.Environment.IsProduction())
 {
-    app.Urls.Add("http://0.0.0.0:7074");
+    app.Urls.Add("http://0.0.0.0:7075");
 }
 
 app.Run();

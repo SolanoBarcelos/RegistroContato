@@ -57,7 +57,7 @@ public class Program
         // Configura a URL e a porta para ambiente de produção (exemplo Docker)
         if (app.Environment.IsProduction())
         {
-            app.Urls.Add("http://0.0.0.0:7073");
+            app.Urls.Add("http://0.0.0.0:7074");
         }
 
         app.Run();

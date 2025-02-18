@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UpdateContatoProducer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1231ecfc0ef3b76e17162c003fa8b5da3ced603a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a63a34615a8c1908bc8e98f411d3603ef66e2c59")]
 [assembly: System.Reflection.AssemblyProductAttribute("UpdateContatoProducer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UpdateContatoProducer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
