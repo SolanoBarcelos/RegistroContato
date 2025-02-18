@@ -18,7 +18,7 @@ public class ContatoValidateService
 
         if (!isPartialUpdate || !string.IsNullOrEmpty(contato.email_contato))
         {
-            if (!IsValidEmail(contato.email_contato))
+            if (!IsValidEmail(contato.email_contato ?? ""))
             {
                 erros.Add("E-mail inválido.");
             }
@@ -26,7 +26,7 @@ public class ContatoValidateService
 
         if (!isPartialUpdate || !string.IsNullOrEmpty(contato.telefone_contato))
         {
-            if (!IsValidTelefone(contato.telefone_contato))
+            if (!IsValidTelefone(contato.telefone_contato ?? ""))
             {
                 erros.Add("Telefone inválido.");
             }
