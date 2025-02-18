@@ -1,0 +1,377 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\git\\RegistroContato\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{669497AB-EE02-438B-9818-926C686DA6CE}|AddContatoProducer\\AddContatoProducer.csproj|c:\\git\\registrocontato\\addcontatoproducer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669497AB-EE02-438B-9818-926C686DA6CE}|AddContatoProducer\\AddContatoProducer.csproj|solutionrelative:addcontatoproducer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{945F184A-D8F2-4037-821A-2519CD97B554}|RegistroContatoConsumer\\RegistroContatoConsumer.csproj|c:\\git\\registrocontato\\registrocontatoconsumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{945F184A-D8F2-4037-821A-2519CD97B554}|RegistroContatoConsumer\\RegistroContatoConsumer.csproj|solutionrelative:registrocontatoconsumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB22961-7961-4008-9AA9-727BC3C4B38E}|UpdateContatoConsumer\\UpdateContatoConsumer.csproj|c:\\git\\registrocontato\\updatecontatoconsumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBB22961-7961-4008-9AA9-727BC3C4B38E}|UpdateContatoConsumer\\UpdateContatoConsumer.csproj|solutionrelative:updatecontatoconsumer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{945F184A-D8F2-4037-821A-2519CD97B554}|RegistroContatoConsumer\\RegistroContatoConsumer.csproj|c:\\git\\registrocontato\\registrocontatoconsumer\\eventos\\addcontatoconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{945F184A-D8F2-4037-821A-2519CD97B554}|RegistroContatoConsumer\\RegistroContatoConsumer.csproj|solutionrelative:registrocontatoconsumer\\eventos\\addcontatoconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB22961-7961-4008-9AA9-727BC3C4B38E}|UpdateContatoConsumer\\UpdateContatoConsumer.csproj|c:\\git\\registrocontato\\updatecontatoconsumer\\eventos\\updatecontatoconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBB22961-7961-4008-9AA9-727BC3C4B38E}|UpdateContatoConsumer\\UpdateContatoConsumer.csproj|solutionrelative:updatecontatoconsumer\\eventos\\updatecontatoconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{669497AB-EE02-438B-9818-926C686DA6CE}|AddContatoProducer\\AddContatoProducer.csproj|c:\\git\\registrocontato\\addcontatoproducer\\controllers\\addcontatoproducercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669497AB-EE02-438B-9818-926C686DA6CE}|AddContatoProducer\\AddContatoProducer.csproj|solutionrelative:addcontatoproducer\\controllers\\addcontatoproducercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{945F184A-D8F2-4037-821A-2519CD97B554}|RegistroContatoConsumer\\RegistroContatoConsumer.csproj|c:\\git\\registrocontato\\registrocontatoconsumer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{945F184A-D8F2-4037-821A-2519CD97B554}|RegistroContatoConsumer\\RegistroContatoConsumer.csproj|solutionrelative:registrocontatoconsumer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{669497AB-EE02-438B-9818-926C686DA6CE}|AddContatoProducer\\AddContatoProducer.csproj|c:\\git\\registrocontato\\addcontatoproducer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{669497AB-EE02-438B-9818-926C686DA6CE}|AddContatoProducer\\AddContatoProducer.csproj|solutionrelative:addcontatoproducer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{933ECDDE-1755-4444-A993-81D882F0CE6A}|CoreContato\\CoreContato.csproj|c:\\git\\registrocontato\\corecontato\\dtos\\contatodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{933ECDDE-1755-4444-A993-81D882F0CE6A}|CoreContato\\CoreContato.csproj|solutionrelative:corecontato\\dtos\\contatodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{669497AB-EE02-438B-9818-926C686DA6CE}|AddContatoProducer\\AddContatoProducer.csproj|c:\\git\\registrocontato\\addcontatoproducer\\addcontatoproducer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{669497AB-EE02-438B-9818-926C686DA6CE}|AddContatoProducer\\AddContatoProducer.csproj|solutionrelative:addcontatoproducer\\addcontatoproducer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBB22961-7961-4008-9AA9-727BC3C4B38E}|UpdateContatoConsumer\\UpdateContatoConsumer.csproj|c:\\git\\registrocontato\\updatecontatoconsumer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EBB22961-7961-4008-9AA9-727BC3C4B38E}|UpdateContatoConsumer\\UpdateContatoConsumer.csproj|solutionrelative:updatecontatoconsumer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB137EC0-3EF4-44CA-A7EE-58E378AB33FE}|UpdateContatoProducer\\UpdateContatoProducer.csproj|c:\\git\\registrocontato\\updatecontatoproducer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB137EC0-3EF4-44CA-A7EE-58E378AB33FE}|UpdateContatoProducer\\UpdateContatoProducer.csproj|solutionrelative:updatecontatoproducer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CB137EC0-3EF4-44CA-A7EE-58E378AB33FE}|UpdateContatoProducer\\UpdateContatoProducer.csproj|c:\\git\\registrocontato\\updatecontatoproducer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CB137EC0-3EF4-44CA-A7EE-58E378AB33FE}|UpdateContatoProducer\\UpdateContatoProducer.csproj|solutionrelative:updatecontatoproducer\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A15C0DE2-A1F8-428F-9329-B13585629344}|RegistroContatoTestes\\RegistroContatoTestes.csproj|c:\\git\\registrocontato\\registrocontatotestes\\registrocontatotestes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A15C0DE2-A1F8-428F-9329-B13585629344}|RegistroContatoTestes\\RegistroContatoTestes.csproj|solutionrelative:registrocontatotestes\\registrocontatotestes.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{945F184A-D8F2-4037-821A-2519CD97B554}|RegistroContatoConsumer\\RegistroContatoConsumer.csproj|c:\\git\\registrocontato\\registrocontatoconsumer\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{945F184A-D8F2-4037-821A-2519CD97B554}|RegistroContatoConsumer\\RegistroContatoConsumer.csproj|solutionrelative:registrocontatoconsumer\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A15C0DE2-A1F8-428F-9329-B13585629344}|RegistroContatoTestes\\RegistroContatoTestes.csproj|c:\\git\\registrocontato\\registrocontatotestes\\itegrationtestsrotaup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A15C0DE2-A1F8-428F-9329-B13585629344}|RegistroContatoTestes\\RegistroContatoTestes.csproj|solutionrelative:registrocontatotestes\\itegrationtestsrotaup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE393106-1137-4CFD-BF9A-199F14643813}|DeleteContato\\DeleteContato.csproj|c:\\git\\registrocontato\\deletecontato\\controllers\\deletecontatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE393106-1137-4CFD-BF9A-199F14643813}|DeleteContato\\DeleteContato.csproj|solutionrelative:deletecontato\\controllers\\deletecontatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AA9CD0B-6E74-4485-8E63-3D7CAA51A115}|GetContato\\GetContato.csproj|c:\\git\\registrocontato\\getcontato\\controllers\\getcontatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AA9CD0B-6E74-4485-8E63-3D7CAA51A115}|GetContato\\GetContato.csproj|solutionrelative:getcontato\\controllers\\getcontatocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A15C0DE2-A1F8-428F-9329-B13585629344}|RegistroContatoTestes\\RegistroContatoTestes.csproj|c:\\git\\registrocontato\\registrocontatotestes\\unittestcontatovalidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A15C0DE2-A1F8-428F-9329-B13585629344}|RegistroContatoTestes\\RegistroContatoTestes.csproj|solutionrelative:registrocontatotestes\\unittestcontatovalidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{933ECDDE-1755-4444-A993-81D882F0CE6A}|CoreContato\\CoreContato.csproj|c:\\git\\registrocontato\\corecontato\\service\\contatovalidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{933ECDDE-1755-4444-A993-81D882F0CE6A}|CoreContato\\CoreContato.csproj|solutionrelative:corecontato\\service\\contatovalidateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{933ECDDE-1755-4444-A993-81D882F0CE6A}|CoreContato\\CoreContato.csproj|c:\\git\\registrocontato\\corecontato\\models\\contato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{933ECDDE-1755-4444-A993-81D882F0CE6A}|CoreContato\\CoreContato.csproj|solutionrelative:corecontato\\models\\contato.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AddContatoProducer",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\AddContatoProducer\\AddContatoProducer.csproj",
+              "RelativeDocumentMoniker": "AddContatoProducer\\AddContatoProducer.csproj",
+              "ToolTip": "C:\\git\\RegistroContato\\AddContatoProducer\\AddContatoProducer.csproj",
+              "RelativeToolTip": "AddContatoProducer\\AddContatoProducer.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-17T23:48:04.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ContatoDTO.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\CoreContato\\DTOs\\ContatoDTO.cs",
+              "RelativeDocumentMoniker": "CoreContato\\DTOs\\ContatoDTO.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\CoreContato\\DTOs\\ContatoDTO.cs",
+              "RelativeToolTip": "CoreContato\\DTOs\\ContatoDTO.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T23:48:07.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\UpdateContatoConsumer\\appsettings.json",
+              "RelativeDocumentMoniker": "UpdateContatoConsumer\\appsettings.json",
+              "ToolTip": "C:\\git\\RegistroContato\\UpdateContatoConsumer\\appsettings.json",
+              "RelativeToolTip": "UpdateContatoConsumer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T23:25:09.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\UpdateContatoConsumer\\Program.cs",
+              "RelativeDocumentMoniker": "UpdateContatoConsumer\\Program.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\UpdateContatoConsumer\\Program.cs",
+              "RelativeToolTip": "UpdateContatoConsumer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T23:26:59.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateContatoConsumer.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\UpdateContatoConsumer\\Eventos\\UpdateContatoConsumer.cs",
+              "RelativeDocumentMoniker": "UpdateContatoConsumer\\Eventos\\UpdateContatoConsumer.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\UpdateContatoConsumer\\Eventos\\UpdateContatoConsumer.cs",
+              "RelativeToolTip": "UpdateContatoConsumer\\Eventos\\UpdateContatoConsumer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAwwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T23:25:56.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\AddContatoProducer\\Program.cs",
+              "RelativeDocumentMoniker": "AddContatoProducer\\Program.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\AddContatoProducer\\Program.cs",
+              "RelativeToolTip": "AddContatoProducer\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAswD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T23:18:08.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\UpdateContatoProducer\\appsettings.json",
+              "RelativeDocumentMoniker": "UpdateContatoProducer\\appsettings.json",
+              "ToolTip": "C:\\git\\RegistroContato\\UpdateContatoProducer\\appsettings.json",
+              "RelativeToolTip": "UpdateContatoProducer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T23:15:41.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\AddContatoProducer\\appsettings.json",
+              "RelativeDocumentMoniker": "AddContatoProducer\\appsettings.json",
+              "ToolTip": "C:\\git\\RegistroContato\\AddContatoProducer\\appsettings.json",
+              "RelativeToolTip": "AddContatoProducer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T23:15:26.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RegistroContatoTestes",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\RegistroContatoTestes\\RegistroContatoTestes.csproj",
+              "RelativeDocumentMoniker": "RegistroContatoTestes\\RegistroContatoTestes.csproj",
+              "ToolTip": "C:\\git\\RegistroContato\\RegistroContatoTestes\\RegistroContatoTestes.csproj",
+              "RelativeToolTip": "RegistroContatoTestes\\RegistroContatoTestes.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-17T22:52:52.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Worker.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\Worker.cs",
+              "RelativeDocumentMoniker": "RegistroContatoConsumer\\Worker.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\Worker.cs",
+              "RelativeToolTip": "RegistroContatoConsumer\\Worker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T22:02:22.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\appsettings.json",
+              "RelativeDocumentMoniker": "RegistroContatoConsumer\\appsettings.json",
+              "ToolTip": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\appsettings.json",
+              "RelativeToolTip": "RegistroContatoConsumer\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T21:59:57.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddContatoConsumer.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\Eventos\\AddContatoConsumer.cs",
+              "RelativeDocumentMoniker": "RegistroContatoConsumer\\Eventos\\AddContatoConsumer.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\Eventos\\AddContatoConsumer.cs",
+              "RelativeToolTip": "RegistroContatoConsumer\\Eventos\\AddContatoConsumer.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T21:58:03.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GetContatoController.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\GetContato\\Controllers\\GetContatoController.cs",
+              "RelativeDocumentMoniker": "GetContato\\Controllers\\GetContatoController.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\GetContato\\Controllers\\GetContatoController.cs",
+              "RelativeToolTip": "GetContato\\Controllers\\GetContatoController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T20:23:16.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddContatoProducerController.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\AddContatoProducer\\Controllers\\AddContatoProducerController.cs",
+              "RelativeDocumentMoniker": "AddContatoProducer\\Controllers\\AddContatoProducerController.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\AddContatoProducer\\Controllers\\AddContatoProducerController.cs",
+              "RelativeToolTip": "AddContatoProducer\\Controllers\\AddContatoProducerController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAwwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T20:08:54.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ItegrationTestsRotaUp.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\RegistroContatoTestes\\ItegrationTestsRotaUp.cs",
+              "RelativeDocumentMoniker": "RegistroContatoTestes\\ItegrationTestsRotaUp.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\RegistroContatoTestes\\ItegrationTestsRotaUp.cs",
+              "RelativeToolTip": "RegistroContatoTestes\\ItegrationTestsRotaUp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T20:08:13.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DeleteContatoController.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\DeleteContato\\Controllers\\DeleteContatoController.cs",
+              "RelativeDocumentMoniker": "DeleteContato\\Controllers\\DeleteContatoController.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\DeleteContato\\Controllers\\DeleteContatoController.cs",
+              "RelativeToolTip": "DeleteContato\\Controllers\\DeleteContatoController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAkwCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T20:04:01.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ContatoValidateService.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\CoreContato\\Service\\ContatoValidateService.cs",
+              "RelativeDocumentMoniker": "CoreContato\\Service\\ContatoValidateService.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\CoreContato\\Service\\ContatoValidateService.cs",
+              "RelativeToolTip": "CoreContato\\Service\\ContatoValidateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T19:57:12.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UnitTestContatoValidateService.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\RegistroContatoTestes\\UnitTestContatoValidateService.cs",
+              "RelativeDocumentMoniker": "RegistroContatoTestes\\UnitTestContatoValidateService.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\RegistroContatoTestes\\UnitTestContatoValidateService.cs",
+              "RelativeToolTip": "RegistroContatoTestes\\UnitTestContatoValidateService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T19:55:46.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Contato.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\CoreContato\\Models\\Contato.cs",
+              "RelativeDocumentMoniker": "CoreContato\\Models\\Contato.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\CoreContato\\Models\\Contato.cs",
+              "RelativeToolTip": "CoreContato\\Models\\Contato.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T22:02:34.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\UpdateContatoProducer\\Program.cs",
+              "RelativeDocumentMoniker": "UpdateContatoProducer\\Program.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\UpdateContatoProducer\\Program.cs",
+              "RelativeToolTip": "UpdateContatoProducer\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T21:18:47.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\Program.cs",
+              "RelativeDocumentMoniker": "RegistroContatoConsumer\\Program.cs",
+              "ToolTip": "C:\\git\\RegistroContato\\RegistroContatoConsumer\\Program.cs",
+              "RelativeToolTip": "RegistroContatoConsumer\\Program.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAADwvzsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-16T21:16:58.648Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
