@@ -53,7 +53,7 @@ app.MapControllers();
 // 10. Configura as portas para ambiente de produção (Docker)
 if (app.Environment.IsProduction())
 {
-    app.Urls.Add("http://0.0.0.0:7070");
+    app.Urls.Add("http://0.0.0.0:7072");
 }
 
 app.Run();

@@ -55,3 +55,4 @@ C:\git\RegistroContato\DeleteContato\obj\Debug\net8.0\refint\DeleteContato.dll
 C:\git\RegistroContato\DeleteContato\obj\Debug\net8.0\DeleteContato.pdb
 C:\git\RegistroContato\DeleteContato\obj\Debug\net8.0\DeleteContato.genruntimeconfig.cache
 C:\git\RegistroContato\DeleteContato\obj\Debug\net8.0\ref\DeleteContato.dll
+C:\git\RegistroContato\DeleteContato\obj\Debug\net8.0\DeleteContato.sourcelink.json

@@ -40,7 +40,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
             });
 
             // Definição explícita da fila para Update Contato
-            cfg.ReceiveEndpoint(massTransitConfig["NomeFilaUpdateContato"], e => { });
+            cfg.ReceiveEndpoint(massTransitConfig["NomeFila"], e => { });
         });
     });
 
@@ -58,7 +58,7 @@ void ConfigureApp(WebApplication app)
     // Configura a URL e a porta para ambiente de produção (Docker)
     if (app.Environment.IsProduction())
     {
-        app.Urls.Add("http://0.0.0.0:7074");
+        app.Urls.Add("http://0.0.0.0:7075");
     }
 
     // Exposição do endpoint /metrics para o Prometheus

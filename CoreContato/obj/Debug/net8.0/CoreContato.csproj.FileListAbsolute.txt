@@ -10,3 +10,4 @@ C:\git\RegistroContato\CoreContato\obj\Debug\net8.0\CoreContato.dll
 C:\git\RegistroContato\CoreContato\obj\Debug\net8.0\refint\CoreContato.dll
 C:\git\RegistroContato\CoreContato\obj\Debug\net8.0\CoreContato.pdb
 C:\git\RegistroContato\CoreContato\obj\Debug\net8.0\ref\CoreContato.dll
+C:\git\RegistroContato\CoreContato\obj\Debug\net8.0\CoreContato.sourcelink.json

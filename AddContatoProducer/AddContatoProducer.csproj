@@ -14,7 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AddContatoConsumer\AddContatoConsumer.csproj" />
     <ProjectReference Include="..\CoreContato\CoreContato.csproj" />
+    <ProjectReference Include="..\RegistroContatoConsumer\AddContatoConsumer.csproj" />
     <ProjectReference Include="..\RegistroContatoConsumer\RegistroContatoConsumer.csproj" />
   </ItemGroup>
 

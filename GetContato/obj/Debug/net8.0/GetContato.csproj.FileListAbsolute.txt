@@ -67,3 +67,4 @@ C:\git\RegistroContato\GetContato\obj\Debug\net8.0\refint\GetContato.dll
 C:\git\RegistroContato\GetContato\obj\Debug\net8.0\GetContato.pdb
 C:\git\RegistroContato\GetContato\obj\Debug\net8.0\GetContato.genruntimeconfig.cache
 C:\git\RegistroContato\GetContato\obj\Debug\net8.0\ref\GetContato.dll
+C:\git\RegistroContato\GetContato\obj\Debug\net8.0\GetContato.sourcelink.json

@@ -41,3 +41,4 @@ C:\git\RegistroContato\UpdateContatoProducer\obj\Debug\net8.0\UpdateContatoProdu
 C:\git\RegistroContato\UpdateContatoProducer\obj\Debug\net8.0\ref\UpdateContatoProducer.dll
 C:\git\RegistroContato\UpdateContatoProducer\bin\Debug\net8.0\Prometheus.NetStandard.dll
 C:\git\RegistroContato\UpdateContatoProducer\bin\Debug\net8.0\Prometheus.AspNetCore.dll
+C:\git\RegistroContato\UpdateContatoProducer\obj\Debug\net8.0\UpdateContatoProducer.sourcelink.json

@@ -4,7 +4,7 @@ using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("/RegistroContato")]
+[Route("/AddContato")]
 public class AddContatoProducerController : ControllerBase
 {
     private readonly ISendEndpointProvider _sendEndpointProvider;

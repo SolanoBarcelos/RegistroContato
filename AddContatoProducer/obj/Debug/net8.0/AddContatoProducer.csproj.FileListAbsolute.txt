@@ -82,9 +82,6 @@ C:\git\RegistroContato\AddContatoProducer\obj\Debug\net8.0\AddContatoProducer.ge
 C:\git\RegistroContato\AddContatoProducer\obj\Debug\net8.0\ref\AddContatoProducer.dll
 C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\Prometheus.NetStandard.dll
 C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\Prometheus.AspNetCore.dll
-C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\RegistroContatoConsumer.deps.json
-C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\RegistroContatoConsumer.runtimeconfig.json
-C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\RegistroContatoConsumer.exe
 C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\MassTransit.AspNetCoreIntegration.dll
 C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
 C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
@@ -107,5 +104,9 @@ C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\Microsoft.Extensions.
 C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\Npgsql.dll
 C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
 C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
-C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\RegistroContatoConsumer.dll
-C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\RegistroContatoConsumer.pdb
+C:\git\RegistroContato\AddContatoProducer\obj\Debug\net8.0\AddContatoProducer.sourcelink.json
+C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\AddContatoConsumer.deps.json
+C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\AddContatoConsumer.runtimeconfig.json
+C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\AddContatoConsumer.exe
+C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\AddContatoConsumer.dll
+C:\git\RegistroContato\AddContatoProducer\bin\Debug\net8.0\AddContatoConsumer.pdb

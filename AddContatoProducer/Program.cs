@@ -5,7 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Prometheus;
-using RegistroContatoConsumer.Eventos; // Importante para usar app.UseMetricServer() e app.UseHttpMetrics()
+using AddContatoConsumer;
+using AddContatoConsumer.Eventos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,7 +34,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
 
     builder.Services.AddMassTransit(mt =>
     {
-        mt.AddConsumer<AddContatoConsumer>(); // Registra o consumidor
+        mt.AddConsumer<AdicionaContatoConsumer>(); // Registra o consumidor
 
         mt.UsingRabbitMq((context, cfg) =>
         {
@@ -54,7 +55,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
             // Recebendo mensagens da fila configurada no appsettings.json
             cfg.ReceiveEndpoint(nomeFila, e =>
             {
-                e.ConfigureConsumer<AddContatoConsumer>(context);
+                e.ConfigureConsumer<AdicionaContatoConsumer>(context);
             });
         });
     });

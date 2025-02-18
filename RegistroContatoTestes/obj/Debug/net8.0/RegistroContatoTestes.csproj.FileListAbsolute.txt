@@ -445,3 +445,4 @@ C:\git\RegistroContato\RegistroContatoTestes\bin\Debug\net8.0\GetContato.dll
 C:\git\RegistroContato\RegistroContatoTestes\bin\Debug\net8.0\DeleteContato.pdb
 C:\git\RegistroContato\RegistroContatoTestes\bin\Debug\net8.0\GetContato.pdb
 C:\git\RegistroContato\RegistroContatoTestes\obj\Debug\net8.0\MvcTestingAppManifest.json
+C:\git\RegistroContato\RegistroContatoTestes\obj\Debug\net8.0\RegistroContatoTestes.sourcelink.json

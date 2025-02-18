@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RegistroContatoTestes")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1231ecfc0ef3b76e17162c003fa8b5da3ced603a")]
 [assembly: System.Reflection.AssemblyProductAttribute("RegistroContatoTestes")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RegistroContatoTestes")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

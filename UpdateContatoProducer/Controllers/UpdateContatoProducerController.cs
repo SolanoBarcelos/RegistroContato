@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace UpdateContatoProducer.Controllers
 {
     [ApiController]
-    [Route("/RegistroContato")]
+    [Route("/UpdateContato")]
     public class UpdateContatoProducerController : ControllerBase
     {
         private readonly ISendEndpointProvider _sendEndpointProvider;
@@ -42,6 +42,7 @@ namespace UpdateContatoProducer.Controllers
 
             try
             {
+                // Valida o contato (verifique se a validação é parcial ou completa conforme sua lógica)
                 _contatoValidateService.ValidateContato(contato, isPartialUpdate: true);
             }
             catch (ArgumentException ex)
@@ -52,8 +53,10 @@ namespace UpdateContatoProducer.Controllers
 
             try
             {
-                var nomeFila = _configuration["MassTransit:NomeFilaUpdateContato"];
+                var nomeFila = _configuration["MassTransit:NomeFila"];
                 var sendEndpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri($"queue:{nomeFila}"));
+
+                // Envia a mensagem para a fila
                 await sendEndpoint.Send(contato);
 
                 _loggerService.LogInfo($"Mensagem de atualização enviada para a fila {nomeFila}.");
