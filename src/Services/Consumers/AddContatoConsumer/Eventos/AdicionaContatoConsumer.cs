@@ -11,7 +11,7 @@ namespace AddContatoConsumer.Eventos
 {
     public class AdicionaContatoConsumer : IConsumer<ContatoDTO>
     {
-        private readonly string _connectionString;
+        private readonly string? _connectionString;
         private readonly LoggerService _loggerService;
 
         public AdicionaContatoConsumer(IConfiguration configuration, LoggerService loggerService)

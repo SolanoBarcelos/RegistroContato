@@ -23,7 +23,7 @@ namespace GetContato.Repository
                 return _dbConnection.GetAll<Contato>();
             }
 
-            public Contato GetById(int id_contato)
+            public Contato?  GetById(int id_contato)
             {
                 //return _connection.Get<Contato>(id_contato);
                 var query = "SELECT * FROM Contatos WHERE id_contato = @id_contato";

@@ -32,7 +32,7 @@ namespace CoreContato.Service
             _logger.LogWarning(message, args);
         }
 
-        public void LogError(string message, Exception ex = null)
+        public void LogError(string message, Exception? ex = null)
         {
             _logger.LogError(ex, message);
         }

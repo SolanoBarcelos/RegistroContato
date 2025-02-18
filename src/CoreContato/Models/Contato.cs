@@ -14,13 +14,13 @@ namespace CoreContato.Models
         public int id_contato { get; set; }
 
         [Column("nome_contato")]
-        public string nome_contato { get; set; }
+        public string? nome_contato { get; set; }
 
         [Column("telefone_contato")]
-        public string telefone_contato { get; set; }
+        public string? telefone_contato { get; set; }
 
         [Column("email_contato")]
-        public string email_contato { get; set; }
+        public string? email_contato { get; set; }
 
     }
 }

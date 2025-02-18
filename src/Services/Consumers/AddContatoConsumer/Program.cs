@@ -6,7 +6,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Prometheus; // Necessário para expor as métricas
 using AddContatoConsumer.Eventos;
-using AddContatoConsumer.Eventos;
 
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
