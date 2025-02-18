@@ -47,16 +47,13 @@ COPY prometheus.yml /etc/prometheus/prometheus.yml
 global:
   scrape_interval: 5s
 
-global:
-  scrape_interval: 5s
-
 scrape_configs:
-  - job_name: "addcontatoconsumer"
+  - job_name: "Addcontatoconsumer"
     scrape_interval: 5s
     static_configs:
       - targets: ["host.docker.internal:7071"]
 
-  - job_name: "Addcontatoconsumer"
+  - job_name: "Addcontatoproducer"
     scrape_interval: 5s
     static_configs:
       - targets: ["host.docker.internal:7072"]
@@ -76,7 +73,7 @@ scrape_configs:
     static_configs:
       - targets: ["host.docker.internal:7075"]
 
-  - job_name: "updatecontatoconsumer"
+  - job_name: "updatecontatoproducer"
     scrape_interval: 5s
     static_configs:
       - targets: ["host.docker.internal:7076"]
@@ -84,6 +81,7 @@ scrape_configs:
   - job_name: "node_exporter"
     static_configs:
       - targets: ["node_exporter_container:9100"]
+
 
 
 GRAFANA
