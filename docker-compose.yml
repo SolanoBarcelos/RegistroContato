@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  deletecontato:
+    build:
+      context: .
+      dockerfile: deployments/docker/Dockerfile.DeleteContato
+    container_name: deletecontato_api
+    ports:
+      - "5003:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks:
+      - backend
+
+  getcontato:
+    build:
+      context: .
+      dockerfile: deployments/docker/Dockerfile.GetContato
+    container_name: getcontato_api
+    ports:
+      - "5004:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
