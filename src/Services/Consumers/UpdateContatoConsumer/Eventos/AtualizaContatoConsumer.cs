@@ -11,7 +11,7 @@ namespace UpdateContatoConsumer.Eventos
 {
     public class AtualizaContatoConsumer : IConsumer<ContatoDTO>
     {
-        private readonly string _connectionString;
+        private readonly string? _connectionString;
         private readonly LoggerService _loggerService;
         private readonly ContatoValidateService _contatoValidateService;
 
