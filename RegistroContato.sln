@@ -20,10 +20,21 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{B3138DCC-9E96-478E-A21B-B7C258182A21}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployments", "deployments", "{DAE83784-52F2-4048-BA53-52DBF85889C2}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{241B2E71-E50B-4A1C-AE76-F0C870D939C3}"
+	ProjectSection(SolutionItems) = preProject
+		deletecontato-deployment.yaml = deletecontato-deployment.yaml
+		getcontato-deployment.yaml = getcontato-deployment.yaml
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{177F251F-90DC-40D1-83DB-36DDA6B16477}"
+	ProjectSection(SolutionItems) = preProject
+		Dockerfile.DeleteContato = Dockerfile.DeleteContato
+		Dockerfile.GetContato = Dockerfile.GetContato
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{77A1BE59-63A3-4B0E-9A8A-005D57F97C89}"
 EndProject
@@ -102,6 +113,7 @@ Global
 		{A1255F2E-738A-4784-A0B9-D0645A28651C} = {B4AC3707-063E-44F8-B21D-84CE75E13EA0}
 		{9B62BF87-303E-46D8-917A-2386B9BA1536} = {545EA45E-8E61-476F-9609-20014667B636}
 		{0EE1A669-1082-4CE1-AA5F-4ACEC628BAA0} = {545EA45E-8E61-476F-9609-20014667B636}
+		{A5626E3F-3823-4B66-8246-2EDB83064359} = {6A106B37-3B52-46CB-BA69-7F80B59AD94F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BFBDDCC-A89F-4CF5-B20D-0AE8B066C506}
