@@ -32,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{241B2E71-E50
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docker", "docker", "{177F251F-90DC-40D1-83DB-36DDA6B16477}"
 	ProjectSection(SolutionItems) = preProject
+		Dockerfile.CoreContato = Dockerfile.CoreContato
 		Dockerfile.DeleteContato = Dockerfile.DeleteContato
 		Dockerfile.GetContato = Dockerfile.GetContato
 	EndProjectSection
