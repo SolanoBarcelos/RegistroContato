@@ -1,0 +1,31 @@
+# Etapa 1: Build da aplicação
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+
+# Copiar arquivos de projeto primeiro para otimizar cache do Docker
+COPY ["src/CoreContato/CoreContato.csproj", "CoreContato/"]
+COPY ["src/Services/API/DeleteContato/DeleteContato.csproj", "Services/API/DeleteContato/"]
+
+# Restaurar dependências de todos os projetos
+RUN dotnet restore "Services/API/DeleteContato/DeleteContato.csproj"
+
+# Copiar todo o código-fonte para a imagem
+COPY . .
+
+# Construir a aplicação (evitando restaurar novamente)
+WORKDIR "/src/Services/API/DeleteContato"
+RUN dotnet build -c Release --no-restore
+
+# Publicar a aplicação (evitando re-build)
+RUN dotnet publish -c Release -o /app/publish --no-build
+
+# Etapa 2: Criando a imagem final menor
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+
+# Expor a porta padrão
+EXPOSE 7073
+
+# Comando de inicialização
+ENTRYPOINT ["dotnet", "DeleteContato.dll"]
