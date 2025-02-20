@@ -41,19 +41,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreContato", "src\CoreContato\CoreContato.csproj", "{95B9C676-9BAD-4AAD-A294-C6D6F3C07B93}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeleteContato", "src\Services\API\DeleteContato\DeleteContato.csproj", "{6D9BD31B-8D50-4479-AFA2-89AD32813254}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeleteContato", "src\src/APIs/DeleteContato\DeleteContato.csproj", "{6D9BD31B-8D50-4479-AFA2-89AD32813254}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetContato", "src\Services\API\GetContato\GetContato.csproj", "{AB5AFADD-7B2B-49C9-9451-1EC4465AE03B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetContato", "src\src/APIs/GetContato\GetContato.csproj", "{AB5AFADD-7B2B-49C9-9451-1EC4465AE03B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddContatoConsumer", "src\Services\Consumers\AddContatoConsumer\AddContatoConsumer.csproj", "{5C18FDFD-D055-43F1-A406-7B2BAF0402BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddContatoConsumer", "src\src/Consumers/AddContatoConsumer\AddContatoConsumer.csproj", "{5C18FDFD-D055-43F1-A406-7B2BAF0402BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContatoConsumer", "src\Services\Consumers\UpdateContatoConsumer\UpdateContatoConsumer.csproj", "{A1255F2E-738A-4784-A0B9-D0645A28651C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContatoConsumer", "src\src/Consumers/UpdateContatoConsumer\UpdateContatoConsumer.csproj", "{A1255F2E-738A-4784-A0B9-D0645A28651C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddContatoProducer", "src\Services\Producers\AddContatoProducer\AddContatoProducer.csproj", "{9B62BF87-303E-46D8-917A-2386B9BA1536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddContatoProducer", "src\src/Producers/AddContatoProducer\AddContatoProducer.csproj", "{9B62BF87-303E-46D8-917A-2386B9BA1536}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContatoProducer", "src\Services\Producers\UpdateContatoProducer\UpdateContatoProducer.csproj", "{0EE1A669-1082-4CE1-AA5F-4ACEC628BAA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateContatoProducer", "src\src/Producers/UpdateContatoProducer\UpdateContatoProducer.csproj", "{0EE1A669-1082-4CE1-AA5F-4ACEC628BAA0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegistroContatoTestes", "src\Tests\RegistroContatoTestes\RegistroContatoTestes.csproj", "{A5626E3F-3823-4B66-8246-2EDB83064359}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "src/Shared/Shared.csproj", "{91BA4156-BC67-43F4-B651-E4EFB50DF3BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{7334171E-CDA3-4184-AD17-64BF89CB2B5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +97,10 @@ Global
 		{A5626E3F-3823-4B66-8246-2EDB83064359}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5626E3F-3823-4B66-8246-2EDB83064359}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5626E3F-3823-4B66-8246-2EDB83064359}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91BA4156-BC67-43F4-B651-E4EFB50DF3BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91BA4156-BC67-43F4-B651-E4EFB50DF3BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91BA4156-BC67-43F4-B651-E4EFB50DF3BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91BA4156-BC67-43F4-B651-E4EFB50DF3BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -115,6 +123,8 @@ Global
 		{9B62BF87-303E-46D8-917A-2386B9BA1536} = {545EA45E-8E61-476F-9609-20014667B636}
 		{0EE1A669-1082-4CE1-AA5F-4ACEC628BAA0} = {545EA45E-8E61-476F-9609-20014667B636}
 		{A5626E3F-3823-4B66-8246-2EDB83064359} = {6A106B37-3B52-46CB-BA69-7F80B59AD94F}
+		{91BA4156-BC67-43F4-B651-E4EFB50DF3BC} = {7334171E-CDA3-4184-AD17-64BF89CB2B5B}
+		{7334171E-CDA3-4184-AD17-64BF89CB2B5B} = {F83B678B-473E-45F9-BD10-3867305765BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BFBDDCC-A89F-4CF5-B20D-0AE8B066C506}

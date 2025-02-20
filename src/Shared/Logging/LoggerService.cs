@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
 
-namespace CoreContato.Service
+namespace Shared.Logging
 {
     public class LoggerService
     {
