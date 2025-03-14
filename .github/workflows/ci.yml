@@ -1,0 +1,56 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Docker Compose
+        run: |
+          cp .env.example .env
+          docker-compose build
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Docker Compose
+        run: |
+          cp .env.example .env
+          docker-compose up -d db_contato rabbitmq
+          sleep 15
+
+      - name: Rodar Testes Unitários
+        run: |
+          docker-compose run --rm tests-unit
+
+      - name: Rodar Testes de Integração
+        run: |
+          docker-compose run --rm tests-integration
+
+      - name: Derrubar Containers
+        run: docker-compose down -v
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: success()
+
+    steps:
+      - name: 🚀 Implementar Deploy
+        run: echo "Fazer deploy do projeto..."
