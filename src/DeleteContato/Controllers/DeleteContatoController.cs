@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Dapper.Contrib.Extensions;
 using System.Data;
-using CoreContato.Models;
+using DeleteContato.Models;
 
 namespace DeleteContato.Controllers
 {
     [ApiController]
-    [Route("/deleteContato")]
+    [Route("/contatos")]
     public class DeleteContatoController : ControllerBase
     {
         private readonly IDbConnection _connection;
@@ -22,17 +22,18 @@ namespace DeleteContato.Controllers
             return Ok("API is running");
         }
 
-        [HttpDelete("Delete/{id}")]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            // Cria o objeto com o Id e usa o Dapper.Contrib para deletar diretamente
-            var contato = new Contato { id_contato = id };
+            var contato = _connection.Get<Contato>(id);
+            if (contato == null)
+                return NotFound(new { message = "Contato não encontrado." });
+
             bool result = _connection.Delete(contato);
+            if (!result)
+                return StatusCode(500, new { message = "Erro ao tentar deletar o contato." });
 
-            if (result)
-                return Ok(new { message = "Contato deletado com sucesso." });
-
-            return NotFound(new { message = "Contato não encontrado." });
+            return Ok(new { message = $"Contato {id} deletado com sucesso." });
         }
     }
 }

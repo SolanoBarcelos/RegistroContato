@@ -4,7 +4,7 @@ using Dapper.Contrib.Extensions;
 using TableAttribute = Dapper.Contrib.Extensions.TableAttribute;
 using KeyAttribute = Dapper.Contrib.Extensions.KeyAttribute;
 
-namespace CoreContato.Models
+namespace GetContato.Models
 {
     [Table("contatos")]
     public class Contato

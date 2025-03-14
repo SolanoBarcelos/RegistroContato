@@ -1,6 +1,5 @@
-﻿using CoreContato.DTOs;
-using CoreContato.Models;
-using GetContato.Intefaces;
+﻿using GetContato.Intefaces;
+using GetContato.Models;
 
 namespace GetContato.Service
 {

@@ -1,10 +1,11 @@
-﻿using CoreContato.DTOs;
-using CoreContato.Service;
+﻿using Core.Base.Contracts;
+using Core.Base.Logging;
+using Core.Base.Utils.Validate;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("/AddContato")]
+[Route("/contatos")]
 public class AddContatoProducerController : ControllerBase
 {
     private readonly ISendEndpointProvider _sendEndpointProvider;
@@ -24,17 +25,24 @@ public class AddContatoProducerController : ControllerBase
         _configuration = configuration;
     }
 
-    [HttpGet("upAddContato")]
+    [HttpGet("up")]
     public IActionResult Up()
     {
         return Ok("API is running");
     }
 
-    [HttpPost("AddContatoProducer")]
+    [HttpPost]
     public async Task<IActionResult> PostContatoProducer([FromBody] ContatoDTO contato)
     {
+        if (contato == null)
+        {
+            _loggerService.LogError("Requisição inválida: corpo da requisição está vazio.");
+            return BadRequest(new { mensagem = "O corpo da requisição não pode ser vazio." });
+        }
+
         if (!ModelState.IsValid)
         {
+            _loggerService.LogError("Erro de validação: Campos inválidos.");
             return BadRequest(new { mensagem = "Erro de validação", detalhes = "Campos inválidos" });
         }
 
@@ -50,19 +58,15 @@ public class AddContatoProducerController : ControllerBase
 
         try
         {
-            // Leitura do nome da fila a partir da configuração
-            var nomeFila = _configuration["MassTransit:NomeFila"];
-
-            // Verifique se o nome da fila foi obtido corretamente
+            var nomeFila = _configuration["RABBITMQ_ADD_CONTATO"];
             if (string.IsNullOrEmpty(nomeFila))
             {
-                return BadRequest(new { mensagem = "Nome da fila não configurado", detalhes = "A chave 'MassTransit:NomeFila' não foi encontrada." });
+                _loggerService.LogError("Nome da fila não configurado.");
+                return StatusCode(500, new { mensagem = "Erro interno", detalhes = "Nome da fila não está configurado." });
             }
 
-            // Criação da URI para o endpoint da fila
             var sendEndpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri($"queue:{nomeFila}"));
 
-            // Envio da mensagem
             await sendEndpoint.Send(contato);
 
             _loggerService.LogInfo($"Mensagem enviada para a fila {nomeFila}.");

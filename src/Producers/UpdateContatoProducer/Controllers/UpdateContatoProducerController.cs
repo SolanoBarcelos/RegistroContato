@@ -1,12 +1,14 @@
-﻿using CoreContato.DTOs;
-using CoreContato.Service;
+﻿using Core.Base.Contracts;
+using Core.Base.Logging;
+using Core.Base.Utils.Validate;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace UpdateContatoProducer.Controllers
 {
     [ApiController]
-    [Route("/UpdateContato")]
+    [Route("/contatos")]
     public class UpdateContatoProducerController : ControllerBase
     {
         private readonly ISendEndpointProvider _sendEndpointProvider;
@@ -26,24 +28,30 @@ namespace UpdateContatoProducer.Controllers
             _configuration = configuration;
         }
 
-        [HttpGet("upUpdateContato")]
+        [HttpGet("up")]
         public IActionResult Up()
         {
             return Ok("API is running");
         }
 
-        [HttpPost("UpdateContatoProducer")]
-        public async Task<IActionResult> UpdateContatoProducer([FromBody] ContatoDTO contato)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateContatoProducer(int id, [FromBody] ContatoDTO contato)
         {
+            if (contato == null)
+            {
+                _loggerService.LogError("Requisição inválida: corpo da requisição está vazio.");
+                return BadRequest(new { mensagem = "O corpo da requisição não pode ser vazio." });
+            }
+
             if (!ModelState.IsValid)
             {
+                _loggerService.LogError("Erro de validação: Campos inválidos.");
                 return BadRequest(new { mensagem = "Erro de validação", detalhes = "Campos inválidos" });
             }
 
             try
             {
-                // Valida o contato (verifique se a validação é parcial ou completa conforme sua lógica)
-                _contatoValidateService.ValidateContato(contato, isPartialUpdate: true);
+                _contatoValidateService.ValidateContato(contato, isPartialUpdate: false);
             }
             catch (ArgumentException ex)
             {
@@ -53,14 +61,20 @@ namespace UpdateContatoProducer.Controllers
 
             try
             {
-                var nomeFila = _configuration["MassTransit:NomeFila"];
+                var nomeFila = _configuration["RABBITMQ_UPDATE_CONTATO"];
+                if (string.IsNullOrEmpty(nomeFila))
+                {
+                    _loggerService.LogError("Nome da fila não configurado.");
+                    return StatusCode(500, new { mensagem = "Erro interno", detalhes = "Nome da fila não está configurado." });
+                }
+
+                contato.id_contato = id;
                 var sendEndpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri($"queue:{nomeFila}"));
 
-                // Envia a mensagem para a fila
                 await sendEndpoint.Send(contato);
 
                 _loggerService.LogInfo($"Mensagem de atualização enviada para a fila {nomeFila}.");
-                return Accepted(new { mensagem = "Mensagem enviada para processamento" });
+                return Accepted(new { mensagem = "Mensagem enviada para processamento." });
             }
             catch (Exception ex)
             {

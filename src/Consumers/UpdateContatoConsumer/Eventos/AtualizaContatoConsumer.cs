@@ -1,11 +1,11 @@
-﻿using System.Data;
-using System.Threading.Tasks;
+﻿using Core.Base.Contracts;
+using Core.Base.Logging;
+using Core.Configuration.MetricsPrometheus;
+using Core.Base.Utils.Validate;
 using Dapper;
 using MassTransit;
-using Microsoft.Extensions.Configuration;
 using Npgsql;
-using CoreContato.DTOs;
-using CoreContato.Service;
+
 
 namespace UpdateContatoConsumer.Eventos
 {
@@ -17,7 +17,7 @@ namespace UpdateContatoConsumer.Eventos
 
         public AtualizaContatoConsumer(IConfiguration configuration, LoggerService loggerService, ContatoValidateService contatoValidateService)
         {
-            _connectionString = configuration.GetConnectionString("DefaultConnection");
+            _connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
             _loggerService = loggerService;
             _contatoValidateService = contatoValidateService;
         }
@@ -41,7 +41,6 @@ namespace UpdateContatoConsumer.Eventos
                     throw new Exception("Contato não encontrado");
                 }
 
-                // Atualiza somente os campos não nulos
                 contatoExistente.nome_contato = string.IsNullOrEmpty(contato.nome_contato) ? contatoExistente.nome_contato : contato.nome_contato;
                 contatoExistente.telefone_contato = string.IsNullOrEmpty(contato.telefone_contato) ? contatoExistente.telefone_contato : contato.telefone_contato;
                 contatoExistente.email_contato = string.IsNullOrEmpty(contato.email_contato) ? contatoExistente.email_contato : contato.email_contato;
@@ -58,12 +57,18 @@ namespace UpdateContatoConsumer.Eventos
                 int rowsAffected = await db.ExecuteAsync(sql, contatoExistente);
 
                 if (rowsAffected > 0)
+                {
+                    MetricsConfiguration.IncrementMessagesProcessed();
                     _loggerService.LogInfo("Contato atualizado com sucesso.");
+                }
                 else
+                {
                     _loggerService.LogWarning("Nenhum contato atualizado. Verifique se o ID é válido.");
+                }
             }
             catch (Exception ex)
             {
+                MetricsConfiguration.IncrementMessagesFailed();
                 _loggerService.LogError($"Erro ao atualizar contato: {ex.Message}");
             }
         }

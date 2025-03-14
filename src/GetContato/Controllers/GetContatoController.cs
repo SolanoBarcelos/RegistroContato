@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GetContato.Controllers
 {
     [ApiController]
-    [Route("/GetContato")]
+    [Route("/contatos")]
     public class ContatoController : ControllerBase
     {
         private readonly IContatoService _contatoService;
@@ -14,22 +14,19 @@ namespace GetContato.Controllers
             _contatoService = contatoService;
         }
 
-        // Verifica se a API está no ar
         [HttpGet("up")]
         public IActionResult Up()
         {
             return Ok("API is running");
         }
 
-        // Retorna todos os contatos
-        [HttpGet("GetAll")]
+        [HttpGet]
         public IActionResult GetAll()
         {
             return Ok(_contatoService.GetAllContatos());
         }
 
-        // Retorna um contato específico pelo ID
-        [HttpGet("GetById/{id_contato}")]
+        [HttpGet("{id_contato}")]
         public IActionResult GetById(int id_contato)
         {
             var contato = _contatoService.GetContatoById(id_contato);
@@ -39,8 +36,7 @@ namespace GetContato.Controllers
             return Ok(contato);
         }
 
-        // Retorna todos os contatos pelo DDD informado
-        [HttpGet("GetContatosByDDD/{ddd}")]
+        [HttpGet("ddd/{ddd}")]
         public IActionResult GetByDDD(string ddd)
         {
             return Ok(_contatoService.GetContatosByDDD(ddd));

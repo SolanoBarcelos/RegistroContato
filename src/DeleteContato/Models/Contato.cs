@@ -1,10 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using Dapper.Contrib.Extensions;
 using TableAttribute = Dapper.Contrib.Extensions.TableAttribute;
 using KeyAttribute = Dapper.Contrib.Extensions.KeyAttribute;
 
-namespace CoreContato.Models
+namespace DeleteContato.Models
 {
     [Table("contatos")]
     public class Contato

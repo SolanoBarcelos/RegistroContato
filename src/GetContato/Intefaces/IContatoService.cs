@@ -1,5 +1,4 @@
-﻿using CoreContato.DTOs;
-using CoreContato.Models;
+﻿using GetContato.Models;
 
 namespace GetContato.Intefaces
 {
