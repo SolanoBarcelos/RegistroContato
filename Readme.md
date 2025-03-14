@@ -1,94 +1,164 @@
-Como rodar o projeto em Containers no Docker
+# 📌 RegistroContato - Documentação
 
-DOCKER
-NETWORK
-# Criar rede para os containers compartilharem dados
-docker network create --driver bridge postech
+## 🛠️ Configuração e Inicialização do Projeto
 
+Este projeto é containerizado usando **Docker** e gerenciado pelo **Docker Compose**. Ele inclui diversas integrações como **RabbitMQ, PostgreSQL, Grafana, Prometheus** e **Node Exporter** para monitoramento.
 
-POSTGRES
-docker pull postgres
-docker run -d --name db_contato --network postech -p 5432:5432 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=1234 -e POSTGRES_DB=db_contato postgres:latest
+### ✅ **Pré-requisitos**
 
-criar tabela
+1. **Docker e Docker Compose** instalados.
+2. **Variáveis de ambiente configuradas** (consulte o `.env.example`).
+3. **Acesso ao repositório** para clonar o projeto.
 
-	CREATE TABLE contatos (
-    id_contato INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    nome_contato VARCHAR(100) NOT NULL,
-    telefone_contato VARCHAR(50) NOT NULL,
-    email_contato VARCHAR(100) NOT NULL
-);
+### 📥 **Clonando o repositório**
 
-APLICAÇÂO
-# Criar Dockerfile na pasta raiz, rodar comando de build na pasta raiz
-docker build -t sfbarcelos/cadastro_persistencia_image .
-docker run -d --name cadastro_persistencia_container --network postech -p 7070:7070 sfbarcelos/cadastro_persistencia_image:latest
+```sh
+git clone https://github.com/SolanoBarcelos/RegistroContato.git
+cd RegistroContato
+```
 
-NODE EXPORTER
-# Monitorar CPU e Memoria 
-docker pull prom/node-exporter
-docker run -d -p 9100:9100 --name node_exporter_container --network postech --restart unless-stopped prom/node-exporter
+### 🛠️ **Configuração do ambiente**
 
+Crie um arquivo `.env` na raiz do projeto e preencha com os valores necessários.
+Veja o exemplo no `.env.example`.
 
-PROMETHEUS
-docker pull prom/prometheus
-# criar uma pasta com nome "Prometheus_custom", dentro dela criar os arquivos promethus.yml e Docker file, rodar a Docker build na pasta do prometheus com os arquivos dockerfile e prometheus.yml. Substituir pelo nome da imagem pelo seu namespace no Docker hub. Veja os arquivos no próximo tópico.
--- docker build -t sfbarcelos/prometheus_image:latest .
-docker run -d --name prometheus_agent_container --network postech -p 9090:9090 sfbarcelos/prometheus_image:latest -- substituir pela pelo nome da imagem que você tagueou
+```sh
+cp .env.example .env
+nano .env # Edite conforme necessário
+```
 
-ARQUIVOS PROMETHEUS
-- Dockerfile - Não tem extenção
+### 🚀 **Construindo e Subindo os Containers**
 
-FROM prom/prometheus
-COPY prometheus.yml /etc/prometheus/prometheus.yml
+```sh
+docker-compose up --build -d
+```
 
-- promethus.yml
+- `--build`: Garante que as imagens serão reconstruídas caso necessário.
+- `-d`: Roda os containers em **modo detach** (em segundo plano).
 
-global:
-  scrape_interval: 5s
+Caso queira **reiniciar do zero**:
 
-scrape_configs:
-  - job_name: "Addcontatoconsumer"
-    scrape_interval: 5s
-    static_configs:
-      - targets: ["host.docker.internal:7071"]
+```sh
+docker-compose down -v && docker-compose up --build -d
+```
 
-  - job_name: "Addcontatoproducer"
-    scrape_interval: 5s
-    static_configs:
-      - targets: ["host.docker.internal:7072"]
+---
 
-  - job_name: "deletecontato"
-    scrape_interval: 5s
-    static_configs:
-      - targets: ["host.docker.internal:7073"]
+## 🎯 **Acessando os Serviços**
 
-  - job_name: "getcontato"
-    scrape_interval: 5s
-    static_configs:
-      - targets: ["host.docker.internal:7074"]
+### 🗄️ **Banco de Dados (PostgreSQL)**
 
-  - job_name: "updatecontatoconsumer"
-    scrape_interval: 5s
-    static_configs:
-      - targets: ["host.docker.internal:7075"]
+- **Host:** `${DB_HOST}` *(definido no ******`.env`******)*
+- **Porta:** `${DB_PORT}` *(padrão: 5432)*
+- **Usuário:** `${DB_USER}`
+- **Senha:** `${DB_PASS}`
+- **Nome do Banco:** `${DB_NAME}`
 
-  - job_name: "updatecontatoproducer"
-    scrape_interval: 5s
-    static_configs:
-      - targets: ["host.docker.internal:7076"]
+📌 **Acesso via terminal:**
 
-  - job_name: "node_exporter"
-    static_configs:
-      - targets: ["node_exporter_container:9100"]
+```sh
+docker exec -it db_contato psql -U ${DB_USER} -d ${DB_NAME}
+```
 
+📌 **Acesso via pgAdmin** *(se instalado localmente)*:
 
+- **URL:** `http://localhost:5050`
+- **Usuário/Senha**: Configurados via `.env`
 
-GRAFANA
-docker pull grafana/grafana
--- docker tag grafana/grafana:latest sfbarcelos/grafana_image:latest -- -- se quiser taguear a image
-docker run -d -p 3000:3000 --name grafana_monitoring_container --network postech grafana/grafana:latest -- substituir pela pelo nome da imagem que você tagueou
+📌 **Importante:**
 
+- **O banco é criado automaticamente pelo Docker**, não é necessário configurar nada manualmente.
+- **Durante os testes, a tabela ************`ContatosTestes`************ é criada automaticamente e truncada a cada execução.**
 
-RABBITMQ
-docker run --network postech --name rabbitmq_masstransit_container -p 15672:15672 -p 5672:5672 masstransit/rabbitmq
+---
+
+### 📊 **Monitoramento (Grafana & Prometheus)**
+
+#### 🔍 **Prometheus** *(coleta métricas)*
+
+- **URL:** [http://localhost:9090](http://localhost:9090)
+- \*\*Configuração automática via \*\***`prometheus.yml`**
+
+#### 📈 **Grafana** *(visualização de métricas)*
+
+- **URL:** [http://localhost:3000](http://localhost:3000)
+- **Usuário:** `admin`
+- **Senha:** `${GRAFANA_ADMIN_PASSWORD}` *(definido no ******`.env`******)*
+
+📌 **Passo inicial**: Após o login no Grafana, configure a fonte de dados como **Prometheus (********`http://prometheus:9090`********\*\*\*\*)**.
+
+---
+
+### 📡 **Mensageria (RabbitMQ)**
+
+- **URL:** [http://localhost:15672](http://localhost:15672) *(Painel de Gerenciamento)*
+- **Usuário:** `${RABBITMQ_USER}`
+- **Senha:** `${RABBITMQ_PASS}`
+
+📌 **Acesso via terminal:**
+
+```sh
+docker exec -it rabbitmq rabbitmqctl list_queues
+```
+
+---
+
+## 🧪 **Executando os Testes**
+
+O projeto está configurado para rodar testes de **Unidade** e **Integração** separadamente usando **xUnit**.
+
+📌 **Os testes criam e utilizam a tabela ************`ContatosTestes`************, que é truncada a cada execução.**
+
+### **Rodar Testes Manualmente**
+
+```sh
+docker-compose up --build tests-unit tests-integration
+```
+
+📌 **Separando por categoria:**
+
+```sh
+docker-compose run --rm tests-unit
+```
+
+```sh
+docker-compose run --rm tests-integration
+```
+
+🚀 **Os resultados ficam armazenados em** `TestResults/` dentro do container.
+
+---
+
+## 🔄 **Parar e Remover Containers**
+
+```sh
+docker-compose down -v
+```
+
+- `-v`: Remove volumes persistentes para garantir uma reinicialização limpa.
+
+---
+
+## 🚀 **CI/CD com GitHub Actions**
+
+O repositório inclui um **workflow automatizado no GitHub Actions** para rodar os testes toda vez que um commit é enviado.
+
+- **Pipeline roda automaticamente nos PRs e commits na ************`main`************.**
+- **Se falhar nos testes, o deploy não é realizado.**
+
+Caso precise modificar o workflow, edite o arquivo:
+
+```sh
+.github/workflows/ci.yml
+```
+
+---
+
+## 🔗 **Referências**
+
+- [Documentação do Docker](https://docs.docker.com/)
+- [Documentação do Grafana](https://grafana.com/docs/)
+- [Documentação do Prometheus](https://prometheus.io/docs/)
+- [Documentação do RabbitMQ](https://www.rabbitmq.com/documentation.html)
+- [Documentação do PostgreSQL](https://www.postgresql.org/docs/)
+
