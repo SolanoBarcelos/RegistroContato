@@ -4,53 +4,53 @@ on:
   push:
     branches:
       - master
+      - develop
   pull_request:
     branches:
       - master
+      - develop
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repositório
+      - name: Checkout código
         uses: actions/checkout@v4
 
-      - name: Configurar Docker Compose
+      - name: Configurar Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Configurar cache do NuGet
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Limpar cache NuGet
+        run: dotnet nuget locals all --clear
+
+      - name: Criar `.env` para variáveis de ambiente
+        run: cp .env.example .env
+
+      - name: Construir containers do projeto
+        run: docker compose build
+
+      - name: Subir os containers e aguardar serviços estarem prontos
+        run: docker compose up -d
+
+      - name: Aguardar RabbitMQ e PostgreSQL ficarem saudáveis
         run: |
-          cp .env.example .env
-          docker compose build
+          echo "Aguardando RabbitMQ e PostgreSQL..."
+          sleep 30
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Executar testes unitários
+        run: docker compose run --rm tests-unit
 
-    steps:
-      - name: Checkout repositório
-        uses: actions/checkout@v4
+      - name: Executar testes de integração
+        run: docker compose run --rm tests-integration
 
-      - name: Configurar Docker Compose
-        run: |
-          cp .env.example .env
-          docker compose up -d db_contato rabbitmq
-          sleep 15
-
-      - name: Rodar Testes Unitários
-        run: |
-          docker compose run --rm tests-unit
-
-      - name: Rodar Testes de Integração
-        run: |
-          docker compose run --rm tests-integration
-
-      - name: Derrubar Containers
-        run: docker compose down -v
-
-  deploy:
-    needs: test
-    runs-on: ubuntu-latest
-    if: success()
-
-    steps:
-      - name: Implementar Deploy
-        run: echo "Fazer deploy do projeto..."
+      - name: Parar e remover containers
+        run: docker compose down
