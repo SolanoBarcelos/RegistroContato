@@ -39,7 +39,7 @@ jobs:
         run: cp .env.example .env
 
       - name: Construir containers do projeto
-        run: docker compose build
+        run: docker compose build --no-cache
 
       - name: Subir os containers e aguardar serviços estarem prontos
         run: docker compose up -d
