@@ -32,6 +32,9 @@ jobs:
       - name: Limpar cache NuGet
         run: dotnet nuget locals all --clear
 
+      - name: Restaurar dependências da solução
+        run: dotnet restore
+
       - name: Criar `.env` para variáveis de ambiente
         run: cp .env.example .env
 
