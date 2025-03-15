@@ -119,9 +119,7 @@ services:
       retries: 5
 
   add-contato-consumer:
-    build:
-      context: .
-      dockerfile: src/Consumers/AddContatoConsumer/Dockerfile
+    image: barbarasousilva/registrocontato-add-contato-consumer:latest
     environment:
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
       DB_HOST: ${DB_HOST}
@@ -144,9 +142,7 @@ services:
         condition: service_healthy
 
   update-contato-consumer:
-    build:
-      context: .
-      dockerfile: src/Consumers/UpdateContatoConsumer/Dockerfile
+    image: barbarasousilva/registrocontato-update-contato-consumer:latest
     environment:
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
       DB_HOST: ${DB_HOST}
@@ -169,9 +165,7 @@ services:
         condition: service_healthy
 
   delete-contato:
-    build:
-      context: .
-      dockerfile: src/DeleteContato/Dockerfile
+    image: barbarasousilva/registrocontato-delete-contato:latest
     environment:
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
       DB_HOST: ${DB_HOST}
@@ -190,9 +184,7 @@ services:
         condition: service_healthy
 
   get-contato:
-    build:
-      context: .
-      dockerfile: src/GetContato/Dockerfile
+    image: barbarasousilva/registrocontato-get-contato:latest
     environment:
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
       DB_HOST: ${DB_HOST}
@@ -211,9 +203,7 @@ services:
         condition: service_healthy
 
   add-contato-producer:
-    build:
-      context: .
-      dockerfile: src/Producers/AddContatoProducer/Dockerfile
+    image: barbarasousilva/registrocontato-add-contato-producer:latest
     environment:
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
       DB_HOST: ${DB_HOST}
@@ -238,9 +228,7 @@ services:
         condition: service_healthy
 
   update-contato-producer:
-    build:
-      context: .
-      dockerfile: src/Producers/UpdateContatoProducer/Dockerfile
+    image: barbarasousilva/registrocontato-update-contato-producer:latest
     environment:
       DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}
       DB_HOST: ${DB_HOST}
@@ -265,9 +253,7 @@ services:
         condition: service_healthy
 
   tests-unit:
-    build:
-      context: .
-      dockerfile: src/Tests/Dockerfile
+    image: barbarasousilva/registrocontato-tests-unit:latest
     depends_on:
       db_contato:
         condition: service_healthy
@@ -292,9 +278,7 @@ services:
     command: ["--filter", "Category=Unit"]
 
   tests-integration:
-    build:
-      context: .
-      dockerfile: src/Tests/Dockerfile
+    image: barbarasousilva/registrocontato-tests-integration:latest
     depends_on:
       db_contato:
         condition: service_healthy

@@ -1,0 +1,62 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tests-unit
+  namespace: registro-contato
+spec:
+  template:
+    metadata:
+      labels:
+        app: tests-unit
+    spec:
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: dockerhub-secret
+      containers:
+        - name: tests-unit
+          image: barbarasousilva/registrocontato-tests-unit:latest
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secrets
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: tests-integration
+  namespace: registro-contato
+spec:
+  template:
+    metadata:
+      labels:
+        app: tests-integration
+    spec:
+      restartPolicy: Never
+      imagePullSecrets:
+        - name: dockerhub-secret
+      containers:
+        - name: tests-integration
+          image: barbarasousilva/registrocontato-tests-integration:latest
+          imagePullPolicy: Always
+          envFrom:
+            - configMapRef:
+                name: app-config
+            - secretRef:
+                name: app-secrets
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
