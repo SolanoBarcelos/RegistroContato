@@ -306,6 +306,21 @@ spec:
         - secretRef:
             name: app-secrets
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: delete-contato
+  namespace: registro-contato
+spec:
+  selector:
+    app: delete-contato
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 8080
+  type: NodePort
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -329,6 +344,20 @@ spec:
             name: app-config
         - secretRef:
             name: app-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: get-contato
+  namespace: registro-contato
+spec:
+  selector:
+    app: get-contato
+  ports:
+    - protocol: TCP
+      port: 5005
+      targetPort: 8080
+  type: NodePort 
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -354,6 +383,21 @@ spec:
         - secretRef:
             name: app-secrets
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: add-contato-producer
+  namespace: registro-contato
+spec:
+  selector:
+    app: add-contato-producer
+  ports:
+    - protocol: TCP
+      port: 5006
+      targetPort: 8080
+  type: NodePort
+
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -377,3 +421,19 @@ spec:
             name: app-config
         - secretRef:
             name: app-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: update-contato-producer
+  namespace: registro-contato
+spec:
+  selector:
+    app: update-contato-producer
+  ports:
+    - protocol: TCP
+      port: 5007
+      targetPort: 8080
+  type: NodePort
+
+---
