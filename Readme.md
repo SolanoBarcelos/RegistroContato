@@ -1,45 +1,90 @@
 # 📌 RegistroContato - Documentação
 
+## 🎥 Demonstração
+
+Para ver o projeto em funcionamento, assista ao vídeo abaixo:
+
+[![Demonstração do Projeto](https://img.youtube.com/vi/1KZQEo6E_FdMXX_yOTLND7-t9AbpdWNKX/hqdefault.jpg)](https://drive.google.com/file/d/1KZQEo6E_FdMXX_yOTLND7-t9AbpdWNKX/view?usp=sharing "Clique para assistir")
+
 ## 🛠️ Configuração e Inicialização do Projeto
 
-Este projeto é containerizado usando **Docker** e gerenciado pelo **Docker Compose**. Ele inclui diversas integrações como **RabbitMQ, PostgreSQL, Grafana, Prometheus** e **Node Exporter** para monitoramento.
+Este projeto utiliza **Docker** e **Kubernetes** para a gestão dos containers. Ele inclui:
 
-### ✅ **Pré-requisitos**
+- **APIs REST**
+- **Mensageria RabbitMQ** (Consumers e Producers)
+- **Banco de Dados PostgreSQL**
+- **Monitoramento com Grafana & Prometheus**
 
-1. **Docker e Docker Compose** instalados.
-2. **Variáveis de ambiente configuradas** (consulte o `.env.example`).
-3. **Acesso ao repositório** para clonar o projeto.
+## ✅ **Pré-requisitos**
 
-### 📥 **Clonando o repositório**
+1. **Docker** e **kubectl** instalados
+2. **Acesso ao repositório**
+3. **Acesso ao Docker Hub** para baixar as imagens
+4. **Variáveis de ambiente configuradas** (consulte o .env.example).
+
+## 📥 **Clonando o Repositório**
 
 ```sh
 git clone https://github.com/SolanoBarcelos/RegistroContato.git
 cd RegistroContato
 ```
 
-### 🛠️ **Configuração do ambiente**
+---
 
-Crie um arquivo `.env` na raiz do projeto e preencha com os valores necessários.
-Veja o exemplo no `.env.example`.
+## 🚀 **Rodando com Docker Compose**
+
+### \*\*1️⃣ Criar o arquivo \*\***`.env`**
 
 ```sh
 cp .env.example .env
-nano .env # Edite conforme necessário
+nano .env  # Edite conforme necessário
 ```
 
-### 🚀 **Construindo e Subindo os Containers**
+### **2️⃣ Subir os Containers**
 
 ```sh
-docker-compose up --build -d
+docker compose up --build -d
 ```
 
-- `--build`: Garante que as imagens serão reconstruídas caso necessário.
-- `-d`: Roda os containers em **modo detach** (em segundo plano).
+- `--build`: Garante que as imagens serão reconstruídas
+- `-d`: Roda os containers em **modo detach** (segundo plano)
 
-Caso queira **reiniciar do zero**:
+📌 **Se precisar reiniciar tudo do zero:**
 
 ```sh
-docker-compose down -v && docker-compose up --build -d
+docker compose down -v && docker compose up --build -d
+```
+
+---
+
+## ⚡ **Rodando no Kubernetes**
+
+### **1️⃣ Aplicar Configurações**
+
+```sh
+kubectl apply -f kubernetes_deployments.yaml
+kubectl apply -f kubernetes_db.yaml
+kubectl apply -f kubernetes_rabbitmq.yml
+kubectl apply -f prometheus-config.yaml
+kubectl apply -f kind-config.yaml
+kubectl apply -f secrets.yaml
+kubectl apply -f configmap.yamlaml
+
+```
+
+### **2️⃣ Verificar os Pods**
+
+```sh
+kubectl get pods -n registro-contato
+```
+
+📌 Se precisar deletar e recriar os Pods:
+
+```sh
+kubectl delete pods --all -n registro-contato
+kubectl apply -f kubernetes_deployments.yaml
+kubectl apply -f kubernetes_db.yaml
+kubectl apply -f kubernetes_rabbitmq.yaml
 ```
 
 ---
@@ -48,8 +93,8 @@ docker-compose down -v && docker-compose up --build -d
 
 ### 🗄️ **Banco de Dados (PostgreSQL)**
 
-- **Host:** `${DB_HOST}` *(definido no ******`.env`******)*
-- **Porta:** `${DB_PORT}` *(padrão: 5432)*
+- **Host:** `db-contato.registro-contato.svc.cluster.local`
+- **Porta:** `5432`
 - **Usuário:** `${DB_USER}`
 - **Senha:** `${DB_PASS}`
 - **Nome do Banco:** `${DB_NAME}`
@@ -57,18 +102,22 @@ docker-compose down -v && docker-compose up --build -d
 📌 **Acesso via terminal:**
 
 ```sh
-docker exec -it db_contato psql -U ${DB_USER} -d ${DB_NAME}
+kubectl exec -it db-contato -- psql -U ${DB_USER} -d ${DB_NAME} -n registro-contato
 ```
 
-📌 **Acesso via pgAdmin** *(se instalado localmente)*:
+📌 **Acesso via DBeaver:**
 
-- **URL:** `http://localhost:5050`
-- **Usuário/Senha**: Configurados via `.env`
+1. Adicionar nova conexão PostgreSQL
+2. **Host:** `localhost` (ou o NodePort)
+3. **Porta:** `5432`
+4. **Usuário:** `${DB_USER}`
+5. **Senha:** `${DB_PASS}`
 
-📌 **Importante:**
+Para expor a porta do banco:
 
-- **O banco é criado automaticamente pelo Docker**, não é necessário configurar nada manualmente.
-- **Durante os testes, a tabela ************`ContatosTestes`************ é criada automaticamente e truncada a cada execução.**
+```sh
+kubectl port-forward svc/db-contato 5432:5432 -n registro-contato
+```
 
 ---
 
@@ -76,74 +125,74 @@ docker exec -it db_contato psql -U ${DB_USER} -d ${DB_NAME}
 
 #### 🔍 **Prometheus** *(coleta métricas)*
 
-- **URL:** [http://localhost:9090](http://localhost:9090)
-- \*\*Configuração automática via \*\***`prometheus.yml`**
+- **URL:** `http://<NodeIP>:31623`  *(NodePort)*
+- **Fonte de dados para Grafana:** `http://prometheus:9090`
 
 #### 📈 **Grafana** *(visualização de métricas)*
 
-- **URL:** [http://localhost:3000](http://localhost:3000)
+- **URL:** `http://<NodeIP>:3000`
 - **Usuário:** `admin`
-- **Senha:** `${GRAFANA_ADMIN_PASSWORD}` *(definido no ******`.env`******)*
+- **Senha:** `${GF_SECURITY_ADMIN_PASSWORD}` *(definido no **************`.env`**************)*
 
-📌 **Passo inicial**: Após o login no Grafana, configure a fonte de dados como **Prometheus (********`http://prometheus:9090`********\*\*\*\*)**.
+📌 **Para salvar dashboards:**
+
+- Adicione um **Persistent Volume** ao Grafana.
+- Configure um `ConfigMap` para salvar as configurações.
 
 ---
 
 ### 📡 **Mensageria (RabbitMQ)**
 
-- **URL:** [http://localhost:15672](http://localhost:15672) *(Painel de Gerenciamento)*
+- **URL:** `http://<NodeIP>:15672`
 - **Usuário:** `${RABBITMQ_USER}`
 - **Senha:** `${RABBITMQ_PASS}`
 
 📌 **Acesso via terminal:**
 
 ```sh
-docker exec -it rabbitmq rabbitmqctl list_queues
+kubectl exec -it rabbitmq -n registro-contato -- rabbitmqctl list_queues
+```
+
+Se precisar expor a porta:
+
+```sh
+kubectl port-forward svc/rabbitmq 15672:15672 -n registro-contato
 ```
 
 ---
 
 ## 🧪 **Executando os Testes**
 
-O projeto está configurado para rodar testes de **Unidade** e **Integração** separadamente usando **xUnit**.
-
-📌 **Os testes criam e utilizam a tabela ************`ContatosTestes`************, que é truncada a cada execução.**
-
-### **Rodar Testes Manualmente**
+📌 **Rodar testes manualmente:**
 
 ```sh
-docker-compose up --build tests-unit tests-integration
+docker compose up --build tests-unit tests-integration
 ```
 
 📌 **Separando por categoria:**
 
 ```sh
-docker-compose run --rm tests-unit
+docker compose run --rm tests-unit
+docker compose run --rm tests-integration
 ```
 
-```sh
-docker-compose run --rm tests-integration
-```
-
-🚀 **Os resultados ficam armazenados em** `TestResults/` dentro do container.
+🚀 **Os resultados ficam armazenados em ****************************`TestResults/`**************************** dentro do container.**
 
 ---
 
 ## 🔄 **Parar e Remover Containers**
 
 ```sh
-docker-compose down -v
+docker compose down -v
 ```
-
-- `-v`: Remove volumes persistentes para garantir uma reinicialização limpa.
 
 ---
 
 ## 🚀 **CI/CD com GitHub Actions**
 
-O repositório inclui um **workflow automatizado no GitHub Actions** para rodar os testes toda vez que um commit é enviado.
+O repositório inclui um **workflow automatizado no GitHub Actions** para rodar os testes sempre que um commit é enviado.
 
-- **Pipeline roda automaticamente nos PRs e commits na ************`main`************.**
+- **Pipeline roda automaticamente nos PRs e commits na**  ```master e na develop```
 - **Se falhar nos testes, o deploy não é realizado.**
 
 Caso precise modificar o workflow, edite o arquivo:
