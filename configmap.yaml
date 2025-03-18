@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-configmap
+  namespace: registro-contato
+data:
+  # Banco de Dados
+  DB_HOST: "db-contato.registro-contato.svc.cluster.local"
+  DB_PORT: "5432"
+  DB_NAME: "db_contato"
+
+  # RabbitMQ
+  RABBITMQ_HOST: "rabbitmq.registro-contato.svc.cluster.local"
+
+  # Filas do RabbitMQ
+  RABBITMQ_ADD_CONTATO: "AddContatoQueue"
+  RABBITMQ_UPDATE_CONTATO: "UpdateContatoQueue"
+  RABBITMQ_DELETE_CONTATO: "DeleteContatoQueue"
+  RABBITMQ_READ_CONTATO: "ReadContatoQueue"
+
+  # Ambiente
+  ASPNETCORE_ENVIRONMENT: "Development"
+
+  # Portas dos Microsserviços
+  DELETE_CONTATO_PORT: "5001"
+  ADD_CONTATO_PORT: "5002"
+  UPDATE_CONTATO_PORT: "5003"
+  READ_CONTATO_PORT: "5004"
+  GET_CONTATO_PORT: "5005"
+  ADD_CONTATO_PRODUCER_PORT: "5006"
+  UPDATE_CONTATO_PRODUCER_PORT: "5007"
+
+  # Prometheus
+  ENABLE_METRICS: "true"
+
+  # Logs
+  LOG_LEVEL: "error"
+  LOG_LEVEL_WARNING: "warning"
