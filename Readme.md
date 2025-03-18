@@ -4,7 +4,7 @@
 
 Para ver o projeto em funcionamento, assista ao vídeo abaixo:
 
-[!Demonstração do Projeto](https://drive.google.com/file/d/1KZQEo6E_FdMXX_yOTLND7-t9AbpdWNKX/view?usp=sharing)
+[Demonstração do Projeto](https://drive.google.com/file/d/1KZQEo6E_FdMXX_yOTLND7-t9AbpdWNKX/view?usp=sharing)
 
 ## 🛠️ Configuração e Inicialização do Projeto
 
